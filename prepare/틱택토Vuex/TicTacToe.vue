@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table-component :table-data="tableData" />
+    <table-component />
     <div v-if="winner">{{winner}}님의 승리</div>
   </div>
 </template>
@@ -11,16 +11,10 @@
     components: {
       TableComponent,
     },
-    data() {
-      return {
-        winner: '',
-        turn: 'O',
-        recentCell: [-1, -1],
-        tableData: [['', '', ''],['', '', ''],['', '', '']],
-      };
-    },
-    methods: {
-
+    computed: {
+      winner() {
+        return this.$store.state.winner;
+      },
     },
   };
 </script>
@@ -29,6 +23,7 @@
   table {
     border-collapse: collapse;
   }
+
   td {
     border: 1px solid black;
     width: 40px;

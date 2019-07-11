@@ -7,16 +7,25 @@ module.exports = {
   resolve: {
     extensions: ['.vue', '.js'],
     alias: {
-      vue: 'vue/dist/vue.js'
-    }
+      'vue$': 'vue/dist/vue.esm.js',
+    },
   },
   entry: {
-    app: [path.join(__dirname, 'App.vue')],
+    app: [path.join(__dirname, 'main')],
   },
   module: {
     rules: [{
       test: /\.vue$/,
       loader: 'vue-loader',
+    }, {
+      test: /\.css$/,
+      use: [
+        'vue-style-loader',
+        {
+          loader: 'css-loader',
+          options: { importLoaders: 1 },
+        },
+      ],
     }],
   },
   plugins: [
@@ -25,5 +34,6 @@ module.exports = {
   output: {
     filename: 'app.js',
     path: path.join(__dirname, 'dist'),
+    publicPath: '/dist',
   },
 };

@@ -1,6 +1,6 @@
 <template>
   <tr>
-    <td-component v-for="(r, i) in rowData" :key="i" :row-index="rowIndex" :cellIndex="i" :cellData="r" />
+    <td-component v-for="(row, i) in rowData" :key="i" :row-index="rowIndex" :cellIndex="i" :cellData="row" />
   </tr>
 </template>
 
@@ -12,12 +12,6 @@
     components: {
       TdComponent,
     },
-    mounted() {
-      console.log(this.rowData);
-    },
-    updated() {
-      console.log(this.rowData);
-    }
   }
 </script>
 
