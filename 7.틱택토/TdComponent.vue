@@ -11,6 +11,8 @@
     },
     methods: {
       onClickTd() {
+        if (this.cellData) return;
+
         const rootData = this.$root.$data;
         this.$set(rootData.tableData[this.rowIndex], this.cellIndex, rootData.turn);
 
