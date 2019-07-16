@@ -114,6 +114,9 @@
         }
       },
     },
+    updated() {
+      console.log(this.rowIndex, this.cellIndex, 'updated');
+    }
   };
 </script>
 

@@ -14,7 +14,9 @@ export default new Vuex.Store({
       state.winner = winner;
     },
     CLICK_CELL(state, { row, cell }) {
-      Vue.set(state.tableData[row], cell, state.turn);
+      const tableData = [...state.tableData];
+      tableData[row][cell] = state.turn;
+      state.tableData = tableData;
     },
     CHANGE_TURN(state) {
       state.turn = state.turn === 'O' ? 'X' : 'O';
@@ -30,5 +32,8 @@ export default new Vuex.Store({
     NO_WINNER(state) {
       state.winner = '';
     },
+  },
+  getters: {
+    tableData: (state) => state.tableData,
   },
 });

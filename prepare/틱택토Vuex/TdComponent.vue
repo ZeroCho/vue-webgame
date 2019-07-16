@@ -7,8 +7,8 @@
     props: ['rowIndex', 'cellIndex'],
     computed: {
       cellData() {
-        console.log(this.rowIndex, this.cellIndex, this.$store.state.tableData[this.rowIndex][this.cellIndex]);
-        return this.$store.state.tableData[this.rowIndex][this.cellIndex];
+        console.log('updated');
+        return this.$store.getters.tableData[this.rowIndex][this.cellIndex];
       },
     },
     methods: {
