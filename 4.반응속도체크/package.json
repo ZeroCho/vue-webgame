@@ -13,11 +13,11 @@
     "vue": "^2.6.12"
   },
   "devDependencies": {
-    "css-loader": "^4.2.2",
+    "css-loader": "^4.3.0",
     "vue-loader": "^15.9.3",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.12",
-    "webpack": "^4.44.1",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   }

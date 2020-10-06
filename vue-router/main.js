@@ -1,4 +1,6 @@
 import Vue from 'vue';
-import TicTacToe from './Router';
+import Router from './Router';
 
-new Vue(TicTacToe).$mount('#root');
+new Vue({
+  render: createElement => createElement(Router)
+}).$mount('#root');
