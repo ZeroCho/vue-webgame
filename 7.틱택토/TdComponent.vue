@@ -14,6 +14,7 @@
         if (this.cellData) return;
 
         const rootData = this.$root.$data;
+        console.log(rootData);
         this.$set(rootData.tableData[this.rowIndex], this.cellIndex, rootData.turn);
 
         let win = false;
